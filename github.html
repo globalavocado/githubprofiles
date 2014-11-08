@@ -33,16 +33,26 @@
     <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
 
     <script>
-    $(document).ready(function(){
-      $('#add-profile').on('submit', function(e){
-        e.preventDefault();
-        var url = 'https://api.github.com/users/' + $ ('#username').val();
-        var userData = $.get(url, function(user){
-          console.log(user.followers);
-        });
+          $(document).ready(function(){
+        // targetting #add-profile & wanting an event to happen
+        $('#add-profile').on('submit', function(e){
+          e.preventDefault();
+
+          // the #username is coming from the search box id
+        var url = 'https://api.github.com/users/' + $('#username').val();
+        var userData = 
+          $.get(url, function(user) { 
+          $('<article class="profile"><section class="pic"><img src="' + user.avatar_url + '"></section><section class="statistics"><h3><a href="https://github.com/' + user.login + '">' + user.login + '</a></h3><strong>Repos: ' + user.public_repos + '</strong><strong>Followers: ' + user.followers + '</strong></section><br clear="all"></article>').appendTo('.profile-container');
+          })
+        })
       })
-    })
     </script>
   
   </body>
 </html>
+
+
+
+
+
+
