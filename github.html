@@ -16,17 +16,17 @@
     <template id='profile-template'>
       <article class="profile">
         <section class="pic">
-          <img src="https://avatars.githubusercontent.com/u/5008648?">
+          <img src="{{avatar_url}}">
         </section>
 
         <section class="statistics">
           <h3>
-            <a href="https://github.com/alexmakers">
-              alexmakers
+            <a href="https://github.com/{{login}}">
+              {{login}}
             </a>
           </h3>
-          <strong>Repos: 35</strong>
-          <strong>Followers: 49</strong>
+          <strong>Repos: {{public_repos}}</strong>
+          <strong>Followers: {{followers}}</strong>
         </section>
         <br clear="all">
       </article>
@@ -34,6 +34,7 @@
 
     <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
     <script src='template_check.js'></script>
+    <script src='mustache.js'></script>
     <script>
           $(document).ready(function(){
         $('#add-profile').on('submit', function(e){

@@ -3,7 +3,6 @@ function supportsTemplate() {
 }
 
 if (supportsTemplate()) {
-	alert('Yay!');
 } else { 
-	alert('Nay!');
+	$('#profile-template').hide();
 }
