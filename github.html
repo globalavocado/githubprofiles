@@ -44,7 +44,9 @@
         
         var userData = 
           $.get(url, function(user) { 
-          $('<article class="profile"><section class="pic"><img src="' + user.avatar_url + '"></section><section class="statistics"><h3><a href="https://github.com/' + user.login + '">' + user.login + '</a></h3><strong>Repos: ' + user.public_repos + '</strong><strong>Followers: ' + user.followers + '</strong></section><br clear="all"></article>').appendTo('.profile-container');
+
+            var template = $('#profile-template').html();
+            $('.profile-container').append(Mustache.render(template, user));
           
           // error message when unknown user
           }).fail(function(){
