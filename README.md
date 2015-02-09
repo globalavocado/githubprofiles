@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/globalavocado/githubprofiles/badges/gpa.svg)](https://codeclimate.com/github/globalavocado/githubprofiles)
+
 <h1>Github Profiles search engine</h1>
 
 <h2>Makers Academy week 7 - javascript: using APIs</h2>
